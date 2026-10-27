@@ -1,0 +1,22 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: #ffffff;
+    padding: 16px;
+}
+
+.table th,
+.table td {
+    vertical-align: middle;
+}
+
+footer {
+    color: #6c757d;
+}
