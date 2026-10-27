@@ -41,6 +41,15 @@
                         <td>{{ $buku->stok }}</td>
                         <td>
                             <a href="{{ route('bukus.show', $buku) }}" class="btn btn-info btn-sm">Detail</a>
+
+                            <a href="{{ route('bukus.edit', $buku) }}" class="btn btn-warning btn-sm">Edit</a>
+
+                            <form action="{{ route('bukus.destroy', $buku) }}" method="POST" class="d-inline"
+                                     onsubmit="return confirm('Apakah Anda yakin ingin menghapus buku ini?');">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                            </form>
                         </td>
                     </tr>
                 @empty
@@ -50,7 +59,6 @@
                 @endforelse
             </tbody>
         </table>
-        {{ $bukus->links() }}
     </div>
 </div>
 @endsection
