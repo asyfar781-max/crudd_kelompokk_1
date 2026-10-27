@@ -40,9 +40,9 @@
                         <td>{{ $buku->isbn }}</td>
                         <td>{{ $buku->stok }}</td>
                         <td>
-                            <a href="{{ route('bukus.show', $buku) }}" class="btn btn-info btn-sm">Detail</a>
+                          <a href="{{ route('bukus.show', $buku) }}" class="btn btn-info btn-sm">Detail Buku</a>
 
-                            <a href="{{ route('bukus.edit', $buku) }}" class="btn btn-warning btn-sm">Edit</a>
+                          <a href="{{ route('bukus.edit', $buku) }}" class="btn btn-warning btn-sm">Edit</a>
 
                             <form action="{{ route('bukus.destroy', $buku) }}" method="POST" class="d-inline"
                                      onsubmit="return confirm('Apakah Anda yakin ingin menghapus buku ini?');">
