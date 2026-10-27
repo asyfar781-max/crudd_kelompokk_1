@@ -39,20 +39,25 @@ class BukuController extends Controller
         return view('bukus.show', compact('buku'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Buku $buku)
     {
-        //
+        return view('bukus.edit', compact('buku'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Buku $buku)
     {
-        //
+        $validatedData = $request->validate([
+            'judul' => 'required|max:255',
+            'penulis' => 'required|max:255',
+            'penerbit' => 'required|max:255',
+            'tahun_terbit' => 'required|integer|min:0',
+            'isbn' => 'required|unique:bukus,isbn,' . $buku->id . '|max:255',
+            'stok' => 'required|integer|min:0'
+        ]);
+
+        $buku->update($validatedData);
+
+        return redirect()->route('bukus.index')->with('success', 'Buku berhasil diperbarui.');
     }
 
     /**
