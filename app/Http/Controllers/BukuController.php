@@ -7,12 +7,10 @@ use Illuminate\Http\Request;
 
 class BukuController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $bukus = Buku::latest()->paginate(10);
+        return view('bukus.index', compact('bukus'));
     }
 
     /**
