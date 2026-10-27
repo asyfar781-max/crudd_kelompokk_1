@@ -13,20 +13,25 @@ class BukuController extends Controller
         return view('bukus.index', compact('bukus'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('bukus.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'judul' => 'required|max:255',
+            'penulis' => 'required|max:255',
+            'penerbit' => 'required|max:255',
+            'tahun_terbit' => 'required|integer|min:0',
+            'isbn' => 'required|unique:bukus,isbn|max:255',
+            'stok' => 'required|integer|min:0'
+        ]);
+
+        Buku::create($validatedData);
+
+        return redirect()->route('bukus.index')->with('success', 'Buku berhasil ditambahkan.');
     }
 
     /**
