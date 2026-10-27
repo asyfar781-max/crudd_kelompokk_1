@@ -59,7 +59,7 @@
                 @endforelse
             </tbody>
         </table>
-        {{ $bukus->links() }}
+        {{ $bukus->links('pagination::bootstrap-5') }}
     </div>
 </div>
 @endsection
