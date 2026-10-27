@@ -60,11 +60,9 @@ class BukuController extends Controller
         return redirect()->route('bukus.index')->with('success', 'Buku berhasil diperbarui.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Buku $buku)
     {
-        //
+        $buku->delete();
+        return redirect()->route('bukus.index')->with('success', 'Buku berhasil dihapus.');
     }
 }
