@@ -59,6 +59,7 @@
                 @endforelse
             </tbody>
         </table>
+        {{ $bukus->links() }}
     </div>
 </div>
 @endsection
