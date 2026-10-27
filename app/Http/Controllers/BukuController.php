@@ -34,12 +34,9 @@ class BukuController extends Controller
         return redirect()->route('bukus.index')->with('success', 'Buku berhasil ditambahkan.');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Buku $buku)
     {
-        //
+        return view('bukus.show', compact('buku'));
     }
 
     /**
