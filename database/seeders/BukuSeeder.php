@@ -14,7 +14,7 @@ class BukuSeeder extends Seeder
             'penulis' => 'Andrea Hirata',
             'penerbit' => 'Bentang Pustaka',
             'tahun_terbit' => 2005,
-            'isbn' => '9789793062792',
+            'isbn' => '9789793522345',
             'stok' => 10,
         ]);
         Buku::factory(19)->create();
